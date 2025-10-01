@@ -14,6 +14,9 @@ class Curso(models.Model):
     carga_horaria = models.IntegerField()
     professor = models.ForeignKey(Professor, on_delete=models.CASCADE, related_name='cursos')
 
+    def __str__(self):
+        return self.nome
+
 class Postagem(models.Model):
     titulo = models.CharField(max_length=200)
     conteudo = models.TextField()
